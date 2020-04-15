@@ -15,8 +15,8 @@ import com.harrizontal.mindfi.databinding.ActivitySplashBinding
 class SplashActivity : AppCompatActivity() {
 
     val RC_SIGN_IN: Int = 1;
-    lateinit var mGoogleSignInOptions: GoogleSignInOptions
-    lateinit var mGoogleSignInClient: GoogleSignInClient
+    private lateinit var mGoogleSignInOptions: GoogleSignInOptions
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
 
 
     override fun onStart() {
@@ -65,11 +65,7 @@ class SplashActivity : AppCompatActivity() {
         if (account != null){
             finish()
             startActivity(Intent(this,MainActivity::class.java))
-            Log.e("MainActivity","Welcome "+account.displayName)
-            //Toast.makeText(this,"Welcome "+account.displayName,Toast.LENGTH_LONG).show()
-        }else{
-            Log.e("MainActivity","No account")
-            //Toast.makeText(this,"Account null",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Welcome "+account.displayName,Toast.LENGTH_LONG).show()
         }
     }
 }
